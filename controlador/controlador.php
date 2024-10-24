@@ -73,13 +73,50 @@ function validarTelefono($telefono)
 
 function validarEdad($fecha)
 {
-    $fechaT = date_create($fecha); // creo una variable tipo fecha para luego darle formato
-    $fechaHoy = date_create();
+    global $errores;
+    $fechaN = new DateTime($fecha);
+    // Obtener la fecha actual
+    $fecha_actual = new DateTime();
 
-    return true; //temporalmente
+    // Calcular la diferencia entre la fecha actual y la fecha de nacimiento
+    $diferencia = $fecha_actual->diff($fechaN);
+
+    // Obtener la edad en años
+    $edad = $diferencia->y;
+if ($edad < 18) {
+    $errores[]="<p>Tienes $edad anios. La edad no puede ser menor a 18 anios</p>";
+    return false;
+}else{
+    return true;
+
+}
+
 }
 function validarDni($dni){
-     return true; //temporalmente
+    global $errores;
+    if (preg_match("/^[0-9]{8}[A-Za-z]$/", $dni)) {
+        // Separar la letra del DNI
+        $numero = substr($dni, 0, 8);
+        $letra = strtoupper(substr($dni, -1));
+
+        // Letras de control
+        $letras_validas = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+        // Calcular la letra correspondiente al número
+        $indice = $numero % 23;
+        $letra_correcta = $letras_validas[$indice];
+
+        // Verificar si la letra coincide
+        if ($letra_correcta == $letra) {
+            return true; // DNI válido
+        } else {
+            $errores[]="<p>DNI invalido (letra incorrecta)</p>";
+            return false; // DNI inválido (letra incorrecta)
+        }
+    } else {
+        $errores[]="<p>El DNI tiene formato incorrecto</p>";
+        return false; // Formato de DNI no válido
+    }
 }
 function validarCpostal($cp)
 {
