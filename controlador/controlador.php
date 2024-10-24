@@ -61,12 +61,21 @@ function validarVacio($valor,$variable){
 
 function validarTelefono($telefono)
 {
-    return true; //temporalmente
+    global $errores;
+    if(empty($telefono) || !is_numeric($telefono) || !preg_match("/^[6789]\d{8}$/",$telefono)){
+        $errores[]="<p>El formato del telefono es incorrecto, debe comenzar por 6/7/8/9 y tener 9 digitos</p>";
+        return false;
+    }else {
+        return true;
+    }
 }
 
 
-function validarEdad($edad)
+function validarEdad($fecha)
 {
+    $fechaT = date_create($fecha); // creo una variable tipo fecha para luego darle formato
+    $fechaHoy = date_create();
+
     return true; //temporalmente
 }
 function validarDni($dni){
@@ -74,5 +83,11 @@ function validarDni($dni){
 }
 function validarCpostal($cp)
 {
-    return true; //temporalmente
+    global $errores;
+    if (empty($cp) || !preg_match("/^[0-9]{5}$/", $cp)) {
+        $errores[] = "<p>El codigo postal no puede ser vacio y debe contener 5 numeros</p>";
+        return false;
+    } else {
+        return true; //temporalmente
+    }
 }
