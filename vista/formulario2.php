@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["insertarAlumno"])){
+    header("Location: formulario1.php?errores=Debe completar ambos formularios. Acceso DENEGADO");
+}
+?>
 <!doctype html>
 <html lang="es">
 <head>

@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CEPA</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/formulario1.js"></script>
 </head>
@@ -96,7 +96,7 @@
 
     </div>
     <div class="enviarBoton">
-        <input type="submit" name="enviarFormulario1" value="↪ Siguiente" class="boton">
+        <input type="submit" name="enviarFormulario1" value="? Siguiente" class="boton">
         <p class="error">
             <?php
             if (!empty($_GET["errores"])) {
