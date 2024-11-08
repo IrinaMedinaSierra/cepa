@@ -106,3 +106,42 @@ input[type="text"]:focus, select:focus {
 .error{
     color:darkred;
 }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.mas{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding:15px;
+}
+.opciones{
+    display: flex;
+
+}
+.botonOpciones{
+    padding: 10px!important;
+    background-color: #007bff;
+    color: white;
+    margin-right: 5px;
+    border: none;
+}
+input[type="search"]{
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}

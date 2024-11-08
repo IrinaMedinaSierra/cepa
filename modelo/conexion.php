@@ -7,7 +7,7 @@
 //1.Definir los parámetros de conexion
 $servidor = "localhost";//nombre del servidor
 $usuario = "root"; // nombre el usuario
-$password = ""; //contraseña del usuario
+$password = "Qzec7139."; //contraseña del usuario
 $puerto = "3306";//puerto de conexión a la base de datos
 $bbdd="cepa";
 //creamos la conexión

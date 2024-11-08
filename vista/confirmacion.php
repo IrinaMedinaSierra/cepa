@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (empty($_SESSION["nombreCompleto"])){
-    header("Location: formulario1.php?errores=Debe completar ambos formularios. Acceso DENEGADO");
-}
+	session_start();
+	if (empty($_SESSION["nombreCompleto"])){
+		header("Location: formulario1.php?errores=Debe completar ambos formularios. Acceso DENEGADO");
+	}
 ?>
 <!doctype html>
 <html lang="es">
@@ -34,5 +34,3 @@ if (empty($_SESSION["nombreCompleto"])){
 
 </body>
 </html>
-
-
